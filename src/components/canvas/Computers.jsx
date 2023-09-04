@@ -1,6 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+
+import CanvasLoader from "../Loader";
 
 const Computers = () => {
   // Create lights as refs
@@ -31,14 +33,17 @@ const Computers = () => {
 const ComputerCanvas = () => {
   return (
     <Canvas shadows camera={{ position: [20, 3, 5], fov: 25 }}>
-      <OrbitControls
-        enableZoom={false}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
-      />
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
 
-      {/* Add scene with lights and model */}
-      <Computers />
+        {/* Add scene with lights and model */}
+        <Computers />
+      </Suspense>
+      <Preload all />
     </Canvas>
   );
 };
