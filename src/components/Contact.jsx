@@ -15,8 +15,43 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const handleChange = (e) => {};
-  const handleSubmit = (e) => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setform({ ...form, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    emailjs
+      .send(
+        "service_1cmkcve",
+        "template_w1ohvh9",
+        {
+          from_name: form.name,
+          to_name: "Calvin",
+          from_email: form.email,
+          to_email: "email.calvinle@gmail.com",
+          message: form.message,
+        },
+        "DQ3cMsY51e2Iuygqs"
+      )
+      .then(() => {
+        setLoading(false);
+        alert("Thank you. I will get back to you as soon as possible.");
+        setform(
+          {
+            name: "",
+            email: "",
+            message: "",
+          },
+          (error) => {
+            setLoading(false);
+            console.log(error);
+            alert("Something went wrong...");
+          }
+        );
+      });
+  };
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
