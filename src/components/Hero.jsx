@@ -18,9 +18,13 @@ const Hero = () => {
             Hi, I'm <span className="text-[#5e61ff]">Calvin</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            A breakout <br className="sm:block hidden" /> developer getting into
-            the tech industry with plenty of new ideas and a thirst for
-            knowledge
+            A passionate and results-driven{" "}
+            <strong>Full Stack Web Developer</strong> and{" "}
+            <strong>Software Engineer</strong> with a relentless commitment to
+            crafting elegant, efficient, and scalable digital solutions. I
+            recently graduated from the rigorous "App Academy" coding bootcamp,
+            where I honed my skills in front-end and back-end development, as
+            well as software engineering principles.
           </p>
         </div>
       </div>

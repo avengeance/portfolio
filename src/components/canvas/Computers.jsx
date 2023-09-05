@@ -1,10 +1,10 @@
-import React, { Suspense, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Computers = () => {
+const Computers = ({ isMobile }) => {
   // Create lights as refs
   const hemiLight = useRef();
   const pointLight = useRef();
@@ -22,8 +22,8 @@ const Computers = () => {
       {/* Add model */}
       <primitive
         object={computer.scene}
-        scale={0.75}
-        position={[0, -3.25, -1.5]}
+        scale={isMobile ? 0.5 : 0.75}
+        position={isMobile ? [0, -4, -2.2] : [0, -4.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -31,6 +31,24 @@ const Computers = () => {
 };
 
 const ComputerCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    // How to check if we are on mobile
+    const mediaQuery = window.matchMedia("(max-width:500px)");
+    // If we are or are not how do we change the state variable
+    setIsMobile(mediaQuery.matches);
+    // How would we handle changes to the changes to the media query
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+    // How do we listen for changes in the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    // Once we are unmounted what should we do
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
   return (
     <Canvas shadows camera={{ position: [20, 3, 5], fov: 25 }}>
       <Suspense fallback={<CanvasLoader />}>
@@ -41,7 +59,7 @@ const ComputerCanvas = () => {
         />
 
         {/* Add scene with lights and model */}
-        <Computers />
+        <Computers isMobile={isMobile} />
       </Suspense>
       <Preload all />
     </Canvas>
