@@ -1,10 +1,11 @@
+import { color } from "framer-motion";
 import {
   mobile,
   backend,
   creator,
   web,
   javascript,
-  typescript,
+  python,
   html,
   css,
   reactjs,
@@ -23,6 +24,13 @@ import {
   jobit,
   tripguide,
   threejs,
+  whatcha,
+  soundcloud,
+  airbnb,
+  wifi,
+  threejsimg,
+  dalle,
+  openaiimg,
 } from "../assets";
 
 export const navLinks = [
@@ -30,10 +38,10 @@ export const navLinks = [
     id: "about",
     title: "About",
   },
-  {
-    id: "work",
-    title: "Work",
-  },
+  // {
+  //   id: "work",
+  //   title: "Work",
+  // },
   {
     id: "contact",
     title: "Contact",
@@ -42,21 +50,21 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Full-Stack Web Developer",
     icon: web,
   },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
+  // {
+  //   title: "React Native Developer",
+  //   icon: mobile,
+  // },
   {
     title: "Backend Developer",
     icon: backend,
   },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
+  // {
+  //   title: "Content Creator",
+  //   icon: creator,
+  // },
 ];
 
 const technologies = [
@@ -73,8 +81,8 @@ const technologies = [
     icon: javascript,
   },
   {
-    name: "TypeScript",
-    icon: typescript,
+    name: "Python",
+    icon: python,
   },
   {
     name: "React JS",
@@ -104,13 +112,17 @@ const technologies = [
     name: "git",
     icon: git,
   },
-  {
-    name: "figma",
-    icon: figma,
-  },
+  // {
+  //   name: "figma",
+  //   icon: figma,
+  // },
   {
     name: "docker",
     icon: docker,
+  },
+  {
+    name: "openai",
+    icon: openaiimg,
   },
 ];
 
@@ -198,58 +210,57 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "DALL-E Clone",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A clone of the popular web based application created by OpenAI. Where users can use a prompt generator and create images to the limits of their imagination.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      {
+        name: "mongoDb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "openai",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: dalle,
+    source_code_link: "https://github.com/avengeance/Dalle-e-Clone",
+    deploy_live_link: "https://dalle-e-hvpi.onrender.com/",
+  },
+  {
+    name: "threeJS AI Shirt Customizer",
+    description:
+      "A web based appliaction where a user can upload or use an AI prompt to customize a shirt.",
+    tags: [
+      {
+        name: "javascript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwindcss",
+        color: "green-text-gradient",
+      },
+      {
+        name: "threeJS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: threejsimg,
+    source_code_link: "https://github.com/avengeance/threejs",
+    deploy_live_link: "https://threejs-ai-27n4.onrender.com/",
+  },
+  {
+    name: "WhatCha' Makin",
+    description:
+      "Web-based platform that allows users to search, create, and manage recipes from various providers, providing a convenient and efficient solution for cooking needs.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
+        name: "python",
         color: "green-text-gradient",
       },
       {
@@ -257,8 +268,53 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: whatcha,
+    source_code_link: "https://github.com/avengeance/whatcha_makin",
+    deploy_live_link: "https://whatchamakin.onrender.com/",
+  },
+  {
+    name: "Soundcloud Clone",
+    description:
+      "Web application that enables users to upload and listen to songs that other users have created. Users can create playlists of their favorite songs.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Amazon AWS",
+        color: "green-text-gradient",
+      },
+      {
+        name: "flask",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: soundcloud,
+    source_code_link: "https://github.com/avengeance/soundcloudClone",
+    deploy_live_link: "https://soundcloudclone.onrender.com/",
+  },
+  {
+    name: "AirBnb Clone",
+    description:
+      "A web based application where users can upload and book rental properties. Users can also like and review rental properties they've been before.",
+    tags: [
+      {
+        name: "javascript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "express",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: airbnb,
+    source_code_link: "https://github.com/avengeance/AirBnB-Clone",
+    deploy_live_link: "https://airbnb-clone-p0y8.onrender.com/",
   },
 ];
 

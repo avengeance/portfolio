@@ -20,6 +20,8 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import python from "./tech/python.png";
+import openaiimg from "./tech/openaiimg.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -29,6 +31,12 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import whatcha from "./whatcha.png";
+import soundcloud from "./soundcloud.png";
+import airbnb from "./airbnb.png";
+import wifi from "./wifi.png";
+import threejsimg from "./threejs.png";
+import dalle from "./dalle.png";
 
 export {
   logo,
@@ -59,4 +67,12 @@ export {
   carrent,
   jobit,
   tripguide,
+  python,
+  whatcha,
+  soundcloud,
+  airbnb,
+  wifi,
+  threejsimg,
+  dalle,
+  openaiimg,
 };
