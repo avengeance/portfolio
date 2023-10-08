@@ -1,4 +1,4 @@
-import { color } from "framer-motion";
+import { animateVisualElement, color } from "framer-motion";
 import {
   mobile,
   backend,
@@ -31,6 +31,7 @@ import {
   threejsimg,
   dalle,
   openaiimg,
+  aiSu,
 } from "../assets";
 
 export const navLinks = [
@@ -209,6 +210,19 @@ const testimonials = [
 ];
 
 const projects = [
+  {
+    name: "Ai Summarizer",
+    description:
+      "This is a webpage summarizer app that uses OpenAI's GPT to extract and summarize news or article content from a given URL.",
+    tags: [
+      { name: "redux", color: "blue-text-gradient" },
+      { name: "RapidApi", color: "green-text-gradient" },
+      { name: "vite", color: "pink-text-gradient" },
+    ],
+    image: aiSu,
+    source_code_link: "https://github.com/avengeance/aiSu",
+    deploy_live_link: "https://ai-summarizer-jnku.onrender.com/",
+  },
   {
     name: "DALL-E Clone",
     description:

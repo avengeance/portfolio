@@ -37,6 +37,7 @@ import airbnb from "./airbnb.png";
 import wifi from "./wifi.png";
 import threejsimg from "./threejs.png";
 import dalle from "./dalle.png";
+import aiSu from "./aisu.png";
 
 export {
   logo,
@@ -75,4 +76,5 @@ export {
   threejsimg,
   dalle,
   openaiimg,
+  aiSu,
 };
